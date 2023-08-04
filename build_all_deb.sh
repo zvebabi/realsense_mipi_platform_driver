@@ -25,6 +25,8 @@ fi
 
 if [[ "$JETPACK_VERSION" == "5.0.2" ]]; then
     export CROSS_COMPILE=$DEVDIR/l4t-gcc/$JETPACK_VERSION/bin/aarch64-buildroot-linux-gnu-
+elif [[ "$JETPACK_VERSION" == "5.1.1" ]]; then
+    export CROSS_COMPILE=$DEVDIR/l4t-gcc/$JETPACK_VERSION/bin/aarch64-buildroot-linux-gnu-
 elif [[ "$JETPACK_VERSION" == "4.6.1" ]]; then
     export CROSS_COMPILE=$DEVDIR/l4t-gcc/$JETPACK_VERSION/bin/aarch64-linux-gnu-
 fi
@@ -42,4 +44,4 @@ make ARCH=arm64 O=$TEGRA_KERNEL_OUT tegra_defconfig
 if [[ "$DBGPKG" == "0" ]]; then
     scripts/config --file $TEGRA_KERNEL_OUT/.config --disable DEBUG_INFO
 fi
-make ARCH=arm64 O=$TEGRA_KERNEL_OUT bindeb-pkg -j`nproc`
+make ARCH=arm64 O=$TEGRA_KERNEL_OUT bindeb-pkg -j`nproc --ignore=2`

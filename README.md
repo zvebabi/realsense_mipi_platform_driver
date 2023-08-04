@@ -9,8 +9,23 @@ Currently Supported JetPack versions are:
 - 5.0.2 (default)
 - 4.6.1
 
-## Build kernel, dtb and D457 driver
+## Build kernel, dtb and D457 driver for Leopard E3653 (Dser Maxim MAX96712)
 
+```
+./setup_workspace.sh [JetPack_version]
+
+./apply_patches_leopard.sh apply [JetPack_version]
+
+./build_all_deb.sh --no-dbg-pkg 5.1.1
+```
+
+AGX Orin additionally requires a display drivers to be build, [thread with solution](https://forums.developer.nvidia.com/t/display-doesnt-work-with-custom-kernel/219424/4)
+
+```
+./build_modules.sh 5.1.1
+```
+
+## Origin instruction from Intel, Build kernel, dtb and D457 driver for Leopard E3653 (Dser Maxim max9296)
 The developers can set up the source code with NVIDIA's Jetson git repositories by using the provided setup script:
 
 ```

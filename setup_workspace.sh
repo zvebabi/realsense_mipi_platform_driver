@@ -42,6 +42,9 @@ if [[ ! -d "$DEVDIR/l4t-gcc/$JETPACK_VERSION/bin/" ]]; then
     if [[ "$JETPACK_VERSION" == "5.0.2" ]]; then
         wget https://developer.nvidia.com/embedded/jetson-linux/bootlin-toolchain-gcc-93 -O aarch64--glibc--stable-final.tar.gz
         tar xf aarch64--glibc--stable-final.tar.gz
+    elif [[ "$JETPACK_VERSION" == "5.1.1" ]]; then
+        wget https://developer.nvidia.com/embedded/jetson-linux/bootlin-toolchain-gcc-93 -O aarch64--glibc--stable-final.tar.gz
+        tar xf aarch64--glibc--stable-final.tar.gz
     elif [[ "$JETPACK_VERSION" == "4.6.1" ]]; then
         wget http://releases.linaro.org/components/toolchain/binaries/7.3-2018.05/aarch64-linux-gnu/gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu.tar.xz
         tar xf gcc-linaro-7.3.1-2018.05-x86_64_aarch64-linux-gnu.tar.xz --strip-components 1

@@ -14,7 +14,10 @@ if [[ $JETPACK_VERSION == "5.0.2" ]]; then
 elif [[ $JETPACK_VERSION == "4.6.1" ]]; then
     L4T_VERSION="tegra-l4t-r32.7.1"
     KERNEL_DIR="kernel/kernel-4.9"
+elif [[ $JETPACK_VERSION == "5.1.1" ]]; then
+    L4T_VERSION="jetson_35.3.1"
+    KERNEL_DIR="kernel/kernel-5.10"
 else
-    echo "Wrong JetPack version ($JETPACK_VERSION)! Only 5.0.2 and 4.6.1 supported."
+    echo "Wrong JetPack version ($JETPACK_VERSION)! Only 5.1.1, 5.0.2 and 4.6.1 supported."
     exit 1
 fi
